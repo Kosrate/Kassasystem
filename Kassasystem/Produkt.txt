@@ -1,0 +1,4 @@
+100, Kexchoklad, 10
+200, Mjölk, 2
+300, Banan, 6
+400, Gurka, 7
