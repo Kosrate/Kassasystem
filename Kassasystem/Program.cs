@@ -185,7 +185,7 @@ namespace Kassasystem
                         produkt = produkts.Find(p => p.Id == validatedInput.Item1);
                         if (produkt != null)
                         {
-                            var KvittoRad = new KvittoRad(produkt.Namn, validatedInput.Item2, produkt.Pris, produktID);
+                            var KvittoRad = new KvittoRad(produkt.Namn, validatedInput.Item2, produkt.Pris, produktID, total:, antal:);
                             kvitto.addKvittoRad(KvittoRad);
                             kvitto.print();
                         }

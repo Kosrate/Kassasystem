@@ -14,17 +14,16 @@ namespace Kassasystem
         public int ProduktId { get; set; }
  
 
-        public KvittoRad(string produktNamn, int validatedInputItem2, int produktPris, int produktId)
+        public KvittoRad(string produktNamn, int validatedInputItem2, int produktPris, int produktId, int antal, int total)
         {
-            ProduktNamn = ProduktNamn;
-            Antal = Antal;
-            Pris = ProduktId;
-            Summa = ProduktId * Antal;
-            Total = Total;
+            ProduktNamn = produktNamn;
+            Antal = antal;
+            Pris = produktPris;
+            Summa = produktPris * antal;
+            Total = total;
             ProduktId = produktId;
         }
-
-
+        
         public void printRow()
         {
             Console.WriteLine($"{ProduktNamn} {Antal} * {Pris}kr = {Summa}kr ");
