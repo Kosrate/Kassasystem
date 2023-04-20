@@ -25,6 +25,7 @@ namespace Kassasystem
                 sw.WriteLine(produkt1.getProduktLine());
                 sw.WriteLine(produkt2.getProduktLine());
                 sw.WriteLine(produkt3.getProduktLine());
+                sw.WriteLine(produkt4.getProduktLine());
             }
         }
 
@@ -62,7 +63,7 @@ namespace Kassasystem
         public static string checkInputType(string input)
         {
             string inputType = "";
-            var inputList = input.Split(',');
+            var inputList = input.Split(' ');
             if ((inputList.Count() == 1) && (input.ToUpper() == ("BETALA")))
             {
                 inputType = "BETALA";
@@ -85,9 +86,9 @@ namespace Kassasystem
         public static int checkReturnInput(string input)
         {
             int produktID;
-            var inputList = input.Split(',');
+            var inputList = input.Split(' ');
             bool result = int.TryParse(inputList[1], out produktID);
-            if (result)
+            if (result == false)
             {
                 produktID = -1;
             }
@@ -96,7 +97,7 @@ namespace Kassasystem
 
         public static Tuple<int, int> checkContinueInput(string input)
         {
-            var inputList = input.Split(',');
+            var inputList = input.Split(' ');
             int produktID;
             int antal;
 
@@ -186,7 +187,7 @@ namespace Kassasystem
                         produkt = produkts.Find(p => p.Id == validatedInput.Item1);
                         if (produkt != null)
                         {
-                            var kvittoRad = new KvittoRad(produkt.Namn, validatedInput.Item2, produkt.Pris, produktID, antal: produktID, total: produktID, produkt.PrisTyp);
+                            var kvittoRad = new KvittoRad(produkt.Namn, produkt.Pris, produkt.Id, validatedInput.Item2, produkt.PrisTyp);
                             var KvittoRad = kvittoRad;
                             kvitto.addKvittoRad(KvittoRad);
                             kvitto.print();

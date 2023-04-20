@@ -10,17 +10,15 @@ namespace Kassasystem
         public int Antal { get; set; }
         public int Pris { get; set; }
         public int Summa { get; set; }
-        public int Total { get; set; }
         public int ProduktId { get; set; }
         public string PrisTyp { get; set; }
 
-        public KvittoRad(string produktNamn, int validatedInputItem2, int produktPris, int produktId, int antal, int total, string prisTyp)
+        public KvittoRad(string produktNamn, int produktPris, int produktId, int antal, string prisTyp)
         {
             ProduktNamn = produktNamn;
             Antal = antal;
             Pris = produktPris;
             Summa = produktPris * antal;
-            Total = total;
             ProduktId = produktId;
             PrisTyp = prisTyp;
         }

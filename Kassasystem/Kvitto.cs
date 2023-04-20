@@ -66,6 +66,8 @@ namespace Kassasystem
             var outFile = $"../../../kvitto{timestamp}.txt";
             using (StreamWriter sw = new StreamWriter(outFile, true))
             {
+                sw.WriteLine("*****");
+
                 sw.WriteLine(kvittoDateTime.ToString());
                 sw.WriteLine(Total);
                 sw.WriteLine(TotalAntal);
