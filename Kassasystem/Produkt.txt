@@ -1,4 +1,5 @@
-100, Kexchoklad, 10
-200, Mjölk, 2
-300, Banan, 6
-400, Gurka, 7
+100, Kexchoklad, 10, styck
+200, Mjölk, 2, styck
+300, Banan, 6, Kg
+400, Gurka, 7, styck
+500, Tomat, 5, Kg

@@ -12,9 +12,9 @@ namespace Kassasystem
         public int Summa { get; set; }
         public int Total { get; set; }
         public int ProduktId { get; set; }
- 
+        public string PrisTyp { get; set; }
 
-        public KvittoRad(string produktNamn, int validatedInputItem2, int produktPris, int produktId, int antal, int total)
+        public KvittoRad(string produktNamn, int validatedInputItem2, int produktPris, int produktId, int antal, int total, string prisTyp)
         {
             ProduktNamn = produktNamn;
             Antal = antal;
@@ -22,6 +22,7 @@ namespace Kassasystem
             Summa = produktPris * antal;
             Total = total;
             ProduktId = produktId;
+            PrisTyp = prisTyp;
         }
         
         public void printRow()

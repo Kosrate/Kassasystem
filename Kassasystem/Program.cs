@@ -10,13 +10,14 @@ namespace Kassasystem
 {
     class Program
     {
-        public static void writeProdukts()
+        public static void writeProdukts(string styck, string Kg)
         {
             var outFile = "../../../produkts.txt";
-            Produkt produkt = new Produkt("Kexchoklad", 10, 100 );
-            Produkt produkt1 = new Produkt("Mjölk", 2, 200);
-            Produkt produkt2 = new Produkt("Banan", 6, 300);
-            Produkt produkt3 = new Produkt("Gurka", 7, 400);
+            Produkt produkt = new Produkt("Kexchoklad", 10, 100, styck );
+            Produkt produkt1 = new Produkt("Mjölk", 2, 200, styck);
+            Produkt produkt2 = new Produkt("Banan", 6, 300, Kg);
+            Produkt produkt3 = new Produkt("Gurka", 7, 400, styck);
+            Produkt produkt4 = new Produkt("Tomat", 5, 500, Kg);
             
             StreamWriter sw = new StreamWriter(outFile);
             {
@@ -185,7 +186,8 @@ namespace Kassasystem
                         produkt = produkts.Find(p => p.Id == validatedInput.Item1);
                         if (produkt != null)
                         {
-                            var KvittoRad = new KvittoRad(produkt.Namn, validatedInput.Item2, produkt.Pris, produktID, total:, antal:);
+                            var kvittoRad = new KvittoRad(produkt.Namn, validatedInput.Item2, produkt.Pris, produktID, antal: produktID, total: produktID, produkt.PrisTyp);
+                            var KvittoRad = kvittoRad;
                             kvitto.addKvittoRad(KvittoRad);
                             kvitto.print();
                         }
