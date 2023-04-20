@@ -12,21 +12,18 @@ namespace Kassasystem
         public int Summa { get; set; }
         public int Total { get; set; }
         public int ProduktId { get; set; }
-
-        public KvittoRad(string produktnamn, int antal, int pris, int sum, int total, int produktId)
-        {
-            ProduktNamn = produktnamn;
-            Antal = antal;
-            Pris = pris;
-            Summa = pris * antal;
-            Total = total;
-            ProduktId = produktId;
-        }
+ 
 
         public KvittoRad(string produktNamn, int validatedInputItem2, int produktPris, int produktId)
         {
-            throw new NotImplementedException();
+            ProduktNamn = ProduktNamn;
+            Antal = Antal;
+            Pris = ProduktId;
+            Summa = ProduktId * Antal;
+            Total = Total;
+            ProduktId = produktId;
         }
+
 
         public void printRow()
         {
